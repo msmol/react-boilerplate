@@ -1,0 +1,23 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:dev": "nodemon --watch src src/index.js",
+    "build:client": "npm run create-dist && esbuild static/js/app.js --bundle --loader:.js=jsx --jsx=automatic --jsx-fragment=Fragment --outfile=./dist/js/index.js --allow-overwrite",
+    "build:client:watch": "npm run create-dist && esbuild static/js/app.js --bundle --loader:.js=jsx --jsx=automatic --jsx-fragment=Fragment --outfile=./dist/js/index.js --allow-overwrite --watch --sourcemap",
+    "create-dist": "mkdir -p dist && cp static/index.html dist"
+  },
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "express": "^5.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
